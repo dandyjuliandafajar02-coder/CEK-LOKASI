@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pemeriksaan Sistem</title>
 
+<style>
+body{
+    background:black;
+    color:#00ff00;
+    font-family:Consolas, monospace;
+    padding:20px;
+}
+</style>
+</head>
+<body>
+
+<div id="layar"></div>
+
+<script>
+const layar = document.getElementById("layar");
+
+const pesan = [
+    "Menghubungkan ke server...",
+    "Memindai sistem...",
+    "Mengambil data...",
+    "⚠ SISTEM SEDANG DIRETAS...",
+    "Mengunduh data rahasia...",
+    "100% selesai..."
+];
+
+let i = 0;
+
+function tampil(){
+    if(i < pesan.length){
+        layar.innerHTML += pesan[i] + "<br>";
+        i++;
+        setTimeout(tampil, 1200);
+    } else {
+        setTimeout(() => {
+            document.body.innerHTML =
+            "<h1 style='color:red;text-align:center'>😆 KENA PRANK! 😆</h1>";
+        }, 1500);
+    }
+}
+
+tampil();
+</script>
+
+</body>
+</html>
